@@ -1,13 +1,12 @@
 import express from 'express';
-import { PostRepositoryImpl } from '../../infrastructure/db/mongoose/PostRepositoryImpl';
+import { postRepositoryImpl } from '../../infrastructure/db/mongoose/repository/PostRepositoryImpl';
 import * as postUseCases from '../../app/use_cases/postUseCases';
 
 const router = express.Router();
-const postRepository = new PostRepositoryImpl();
 
-router.get('/posts/:id', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
-        const post = await postUseCases.getPostById(postRepository, req.params.id);
+        const post = await postUseCases.getPostById(postRepositoryImpl, req.params.id);
         if (post) {
             res.json(post);
         } else {
@@ -22,10 +21,9 @@ router.get('/posts/:id', async (req, res) => {
     }
 });
 
-
 router.post('/', async (req, res) => {
     try {
-        const post = await postUseCases.createPost(postRepository, req.body);
+        const post = await postUseCases.createPost(postRepositoryImpl, req.body);
         res.status(201).json(post);
     } catch (error) {
         if (error instanceof Error) {

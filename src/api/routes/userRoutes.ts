@@ -1,7 +1,7 @@
 import express from 'express';
 
 import { UserRepository } from '../../domain/repositories/UserRepository';
-import { UserRepositoryImpl } from '../../infrastructure/db/mongoose/UserRepositoryImpl';
+import { UserRepositoryImpl } from '../../infrastructure/db/mongoose/repository/UserRepositoryImpl';
 import { createUser, getUserById } from '../../app/use_cases/userUseCases';
 
 // implementação concreta do UserRepository

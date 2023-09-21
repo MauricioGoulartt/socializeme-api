@@ -16,12 +16,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const MONGO_URI = 'mongodb+srv://mauricio:1990@cluster0.xleb5zi.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.connect(MONGO_URI)
-.then(() => {
-    console.log('Connected to MongoDB');
-})
-.catch((error) => {
-    console.error('Error connecting to MongoDB:', error);
-});
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((error) => {
+        console.error('Error connecting to MongoDB:', error);
+    });
 
 // Rotas
 app.use('/api', routes);

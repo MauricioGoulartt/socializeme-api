@@ -1,6 +1,7 @@
 import { Post } from '../../domain/entities/Post';
 import { PostRepository } from '../../domain/repositories/PostRepository';
 
+
 const createPost = async (postRepository: PostRepository, post: Post): Promise<Post> => {
     if (!post.conteúdo || post.conteúdo.trim() === '') {
         throw new Error('Post content is required');
