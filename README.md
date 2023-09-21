@@ -56,8 +56,7 @@ API backend para a plataforma social "SocializeMe", construída com TypeScript, 
    ```bash
    git push origin my-feature
 
-6. **Vá até o seu repositório no GitHub e crie uma pull request**:
-   ```bash
+6. **Vá até o seu repositório no GitHub e crie uma pull request**
 
 ## 📝 Licença
 
