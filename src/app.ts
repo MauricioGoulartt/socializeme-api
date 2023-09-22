@@ -2,11 +2,10 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import dotenv from 'dotenv'
-
 import { config } from 'dotenv'
+import path from 'path'
 
-config()
+config({ path: path.resolve('./src/config/.env') })
 
 import routes from './api/routes'
 
@@ -18,7 +17,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // Conexão com o MongoDB
-const MONGO_URI = process.env.MONGO_URI!
+const MONGO_URI = process.env.MONGO_URI
+
+if (!MONGO_URI) {
+  throw new Error('MONGO_URI is not defined in .env')
+}
 
 mongoose
   .connect(MONGO_URI)
