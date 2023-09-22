@@ -2,7 +2,7 @@
 
 import { Post } from '../../../../domain/entities/Post';
 import { PostRepository } from '../../../../domain/repositories/PostRepository';
-import PostModel from '../models/Post'; // Supondo que você tenha definido o modelo Mongoose para Post
+import PostModel from '../models/Post'; 
 
 const save: PostRepository['save'] = async (post: Post) => {
     const newPost = new PostModel(post);

@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const interestValueSchema = new mongoose.Schema({
-    descrição: String
-});
+  descrição: String
+})
 
-export default mongoose.model('InterestValue', interestValueSchema);
+export default mongoose.model('InterestValue', interestValueSchema)
