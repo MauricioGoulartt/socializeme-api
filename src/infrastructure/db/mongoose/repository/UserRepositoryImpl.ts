@@ -1,7 +1,6 @@
 import { User } from '../../../../domain/entities/User';
 import { UserRepository } from '../../../../domain/repositories/UserRepository';
-import UserModel from '../models/User'; // Supondo que você tenha definido o modelo Mongoose para User
-
+import UserModel from '../models/User'; 
 
 export const save: UserRepository['save'] = async (user: User) => {
     const newUser = new UserModel(user);
@@ -18,8 +17,6 @@ export const findByUsername: UserRepository['findByUsername'] = async (username:
     const user = await UserModel.findOne({ username });
     return user ? user.toObject() : null;
 }
-
-// ... implemente outros métodos conforme necessário
 
 export const userRepositoryImpl: UserRepository = {
     save,
