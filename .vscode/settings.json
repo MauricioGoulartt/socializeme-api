@@ -11,5 +11,4 @@
     "[json]": {
         "editor.formatOnSave": true
     },
-    // ... quaisquer outras configurações que você tenha
 }
